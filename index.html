@@ -21,6 +21,14 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+
+  <style>
+    #map{
+        margin: 20px;
+  height: 300px;
+  width: 100%;
+    }
+</style>
 </head>
 
 <body>
@@ -32,7 +40,7 @@
       Recuerda... mente sana en cuerpo sano :)
     </p>
     <nav>
-      <a href="https://api.whatsapp.com/send?phone=593999410923&text=Hola Ingeniero como esta?" target="_blank" title="Whatsapp">
+      <a href="https://api.whatsapp.com/send?phone=593999410923&text=https://www.google.com/maps/place/1%C2%B057'08.4%22S+80%C2%B000'44.9%22W/@-1.9523306,-80.0146477,17z" target="_blank" title="Whatsapp">
         <i class="fab fa-whatsapp"></i>
       </a>
       <a href="https://www.facebook.com/javiersebastian.alvaradocabello/" target="_blank" title="Facebook">
@@ -41,12 +49,31 @@
       <a href="https://www.instagram.com/sebastian_a_c_/" target="_blank" title="Instagram">
         <i class="fab fa-instagram"></i>
       </a>
+      
     </nav>
   </header>
+
+  <div id="map"></div>
+  
   <main class="Main">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/O4f58BU_Hbs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </main>
   <script src="./script.js"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYkzumdMwXCv2HVey-QO26btvzWyo5pGc&callback=iniciarMap"
+    type="text/javascript">
+</script>
+
+<script>
+  function iniciarMap(){
+    var coord ={lat: -1.952333,lng:-80.012472};
+    var map= new google.maps.Map(document.getElementById('map'),{
+      zoom:10,
+      center:coord
+    });
+  }
+</script>
+  
 </body>
 
 </html>
